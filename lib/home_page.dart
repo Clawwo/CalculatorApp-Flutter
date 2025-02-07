@@ -1,12 +1,14 @@
 import 'package:calculator/components/my_button.dart';
 import 'package:calculator/config/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'controller/calculator_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
+    CalculatorController calculatorController = Get.put(CalculatorController());
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -18,28 +20,31 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Calculator",
-                          style: TextStyle(
-                              color: buttonColor,
-                              fontSize: 45,
-                              fontWeight: FontWeight.w800),
-                        ),
-                      ],
-                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                      Obx(
+                        () => calculatorController.outputValue.value == 0.0
+                            ? SizedBox()
+                            : Text(
+                                calculatorController.outputValue.toString(),
+                                style: TextStyle(
+                                    color: buttonColor,
+                                    fontSize: 50,
+                                    fontWeight: FontWeight.w800),
+                              ),
+                      )
+                    ]),
                     SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text(
-                          "Calculator",
-                          style: TextStyle(
-                              color: textColor,
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500),
+                        Obx(
+                          () => Text(
+                            calculatorController.inputValue.value,
+                            style: TextStyle(
+                                color: textColor,
+                                fontSize: 40,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
                       ],
                     )
@@ -63,9 +68,7 @@ class HomePage extends StatelessWidget {
                               Icons.backspace,
                               color: lableColor,
                             )),
-                        SizedBox(
-                          width: 20,
-                        )
+                        const SizedBox(width: 35)
                       ],
                     ),
                     SizedBox(height: 10),
@@ -75,7 +78,7 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: const [
                             MyButton(
-                              btnName: "c",
+                              btnName: "C",
                               isFunction: true,
                             ),
                             MyButton(
@@ -160,6 +163,7 @@ class HomePage extends StatelessWidget {
                             ),
                             MyButton(
                               btnName: "=",
+                              isFunction: true,
                             ),
                           ],
                         ),
