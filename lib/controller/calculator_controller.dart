@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:math_expressions/math_expressions.dart';
+import 'package:calculator/config/colors.dart';
 
 class CalculatorController extends GetxController {
   RxString inputValue = "".obs; // Input pengguna
