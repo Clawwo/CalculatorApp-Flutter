@@ -63,11 +63,19 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.backspace,
-                              color: lableColor,
-                            )),
+                          onPressed: () {
+                            calculatorController.inputValue.value =
+                                calculatorController.inputValue.value.substring(
+                                    0,
+                                    calculatorController
+                                            .inputValue.value.length -
+                                        1);
+                          },
+                          icon: Icon(
+                            Icons.backspace,
+                            color: lableColor,
+                          ),
+                        ),
                         const SizedBox(width: 35)
                       ],
                     ),
@@ -172,7 +180,35 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Text(
+                      'History:',
+                      style: TextStyle(fontSize: 24),
+                    ),
+                    SizedBox(height: 10),
+                    Expanded(
+                      child: Obx(
+                        () => ListView.builder(
+                          itemCount: calculatorController.historyList.length,
+                          itemBuilder: (context, index) {
+                            return Text(
+                              calculatorController.historyList[index],
+                              style: TextStyle(fontSize: 18),
+                            );
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
