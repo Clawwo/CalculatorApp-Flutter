@@ -4,7 +4,8 @@ import 'package:math_expressions/math_expressions.dart';
 class CalculatorController extends GetxController {
   RxString inputValue = "".obs; // Input pengguna
   RxDouble outputValue = 0.0.obs; // Hasil kalkulasi
-  RxList<String> historyList = <String>[].obs; // Riwayat operasi
+  RxList<String> historyList = <String>[].obs; // Menyimpan history
+
   String expression = ""; // Ekspresi matematika
   Parser parser = Parser(); // Parser untuk ekspresi
 
@@ -28,16 +29,11 @@ class CalculatorController extends GetxController {
       expression = inputValue.value.replaceAll("x", "*");
       Expression exp = parser.parse(expression);
       ContextModel contextModel = ContextModel();
-      double result = exp.evaluate(EvaluationType.REAL, contextModel);
-      outputValue.value = result;
+      outputValue.value = exp.evaluate(EvaluationType.REAL, contextModel);
 
-      // Tambahkan ke riwayat
-      historyList.add("${inputValue.value} = $result");
-
-      // Batasi riwayat agar tidak terlalu panjang
-      if (historyList.length > 10) {
-        historyList.removeAt(0);
-      }
+      // Simpan ekspresi dan hasilnya ke history
+      String historyEntry = "${inputValue.value} = ${outputValue.value}";
+      historyList.add(historyEntry);
     } catch (e) {
       print("Error parsing expression: $e");
       outputValue.value = 0.0;
@@ -49,9 +45,5 @@ class CalculatorController extends GetxController {
       return inputValue.value.contains(RegExp(r'[0-9]*\.[0-9]*$'));
     }
     return false;
-  }
-
-  void clearHistory() {
-    historyList.clear();
   }
 }

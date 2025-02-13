@@ -3,6 +3,7 @@ import 'package:calculator/config/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'controller/calculator_controller.dart';
+import 'package:calculator/history_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -59,25 +60,47 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            calculatorController.inputValue.value =
-                                calculatorController.inputValue.value.substring(
-                                    0,
-                                    calculatorController
-                                            .inputValue.value.length -
-                                        1);
-                          },
-                          icon: Icon(
-                            Icons.backspace,
-                            color: lableColor,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 42), // Beri jarak dari tepi layar
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          SizedBox(
+                            width: 40, // Pastikan ukuran tetap agar sejajar
+                            height: 40,
+                            child: IconButton(
+                              onPressed: () {
+                                Get.to(() =>
+                                    HistoryPage()); // Navigasi ke halaman history
+                              },
+                              icon: Icon(
+                                Icons.history,
+                                color: lableColor,
+                              ),
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 35)
-                      ],
+                          SizedBox(
+                            width: 40,
+                            height: 40,
+                            child: IconButton(
+                              onPressed: () {
+                                calculatorController.inputValue.value =
+                                    calculatorController.inputValue.value
+                                        .substring(
+                                            0,
+                                            calculatorController
+                                                    .inputValue.value.length -
+                                                1);
+                              },
+                              icon: Icon(
+                                Icons.backspace,
+                                color: lableColor,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     SizedBox(height: 10),
                     Column(
@@ -180,35 +203,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    Text(
-                      'History:',
-                      style: TextStyle(fontSize: 24),
-                    ),
-                    SizedBox(height: 10),
-                    Expanded(
-                      child: Obx(
-                        () => ListView.builder(
-                          itemCount: calculatorController.historyList.length,
-                          itemBuilder: (context, index) {
-                            return Text(
-                              calculatorController.historyList[index],
-                              style: TextStyle(fontSize: 18),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),
