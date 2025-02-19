@@ -18,46 +18,55 @@ class HistoryPage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         elevation: 2,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Obx(
-          () => calculatorController.historyList.isEmpty
-              ? const Center(
-                  child: Text(
-                    "Belum ada history",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                  ),
-                )
-              : ListView.builder(
-                  itemCount: calculatorController.historyList.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      elevation: 4,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+      body: Center(
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: 550, // Lebar maksimum agar tampilan tetap seperti HP
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Obx(
+              () => calculatorController.historyList.isEmpty
+                  ? const Center(
+                      child: Text(
+                        "Belum ada history",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.w500),
                       ),
-                      margin: const EdgeInsets.symmetric(vertical: 8),
-                      child: ListTile(
-                        contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 10),
-                        title: Text(
-                          calculatorController.historyList[index],
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black87,
+                    )
+                  : ListView.builder(
+                      itemCount: calculatorController.historyList.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          elevation: 4,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                        ),
-                        trailing: IconButton(
-                          icon: const Icon(Icons.delete, color: Colors.red),
-                          onPressed: () {
-                            calculatorController.historyList.removeAt(index);
-                          },
-                        ),
-                      ),
-                    );
-                  },
-                ),
+                          margin: const EdgeInsets.symmetric(vertical: 8),
+                          child: ListTile(
+                            contentPadding: const EdgeInsets.symmetric(
+                                horizontal: 16, vertical: 10),
+                            title: Text(
+                              calculatorController.historyList[index],
+                              style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black87,
+                              ),
+                            ),
+                            trailing: IconButton(
+                              icon: const Icon(Icons.delete, color: Colors.red),
+                              onPressed: () {
+                                calculatorController.historyList
+                                    .removeAt(index);
+                              },
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+            ),
+          ),
         ),
       ),
     );
