@@ -1,56 +1,52 @@
-📱 Flutter Calculator
+# Calculator App 🧮
 
-📝 Deskripsi Aplikasi
+**Calculator App** adalah aplikasi kalkulator sederhana berbasis Flutter yang memungkinkan pengguna untuk melakukan operasi matematika dasar dengan tampilan modern dan responsif.
 
-Flutter Calculator adalah aplikasi kalkulator berbasis Flutter yang dirancang untuk memberikan pengalaman perhitungan yang cepat, akurat, dan mudah digunakan. Aplikasi ini memiliki fitur dasar seperti operasi matematika sederhana, riwayat perhitungan, serta tampilan responsif untuk berbagai ukuran layar.
+## ✨ Fitur
 
-🛠 Software yang Digunakan
+- **Perhitungan Dasar** ➕➖✖️➗  
+  Mendukung operasi matematika seperti penjumlahan, pengurangan, perkalian, dan pembagian.
 
-🏗 Flutter (Framework UI)
+- **Tampilan Responsif** 📱💻  
+  Dapat digunakan pada berbagai ukuran layar, baik di smartphone maupun desktop.
 
-🐍 Dart (Bahasa Pemrograman)
+- **Tema Gelap & Terang** 🌙☀️  
+  Mendukung mode gelap dan terang untuk pengalaman yang lebih nyaman.
 
-🎨 GetX (State Management)
+- **Riwayat Perhitungan** 📝  
+  Menampilkan riwayat perhitungan yang dapat dihapus oleh pengguna.
 
-🎭 Material Design (UI Styling)
+- **Desain Modern & Intuitif** 🎨  
+  Menggunakan Material Design untuk tampilan yang menarik dan mudah digunakan.
 
-⚙️ Cara Instalasi
+## 🛠️ Software yang Digunakan
 
-Clone repository ini
+- **Framework**: [Flutter](https://flutter.dev)  
+- **Bahasa Pemrograman**: Dart  
+- **State Management**: GetX untuk pengelolaan state  
+- **UI/UX**: Material Design  
 
-1.git clone https://github.com/username/flutter_calculator.git
+## 🚀 Cara Instalasi
 
-2.Masuk ke direktori proyek
+1. Pastikan **Flutter** sudah terinstal di perangkat Anda. Jika belum, ikuti panduan di [Flutter Installation Guide](https://docs.flutter.dev/get-started/install).
+2. Clone repository ini ke komputer Anda:
+   ```sh
+   git clone https://github.com/username/calculator-app.git
+Masuk ke direktori project:
+cd calculator-app
+Jalankan perintah berikut untuk menginstal dependency:
+flutter pub get
 
-3.cd flutter_calculator
-
-4.Install dependensi Flutter
-
-5.flutter pub get
-
-▶️ Cara Menjalankan
-
-Pastikan Anda telah menginstal Flutter SDK dan Android Studio/Xcode
-
-Jalankan perintah berikut untuk menjalankan aplikasi
-
+▶️ Cara Menjalankan Aplikasi
+Sambungkan perangkat Android/iOS atau gunakan emulator.
+Jalankan perintah berikut:
 flutter run
 
-Aplikasi akan berjalan di emulator atau perangkat yang terhubung
+🎥 Demo Aplikasi
+(Sertakan tautan atau video demo di sini)
 
-🎥 Demo
-
-🔗 Tonton Demo Penggunaan di Sini (Silakan rekam video menggunakan Snipping Tool atau software lain dan unggah ke platform seperti YouTube/Drive)
-
-👨‍💻 Identitas Pembuat
-
-Nama: Farel Haryanto
-
+👤 Identitas Pembuat
+Nama: John Doe
 Email: johndoe@example.com
-
 GitHub: github.com/johndoe
-
 LinkedIn: linkedin.com/in/johndoe
-
-🚀 Selamat mencoba aplikasi Flutter Calculator! Jika ada pertanyaan atau saran, jangan ragu untuk menghubungi saya. 😊
-
