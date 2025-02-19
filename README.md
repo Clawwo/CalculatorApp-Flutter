@@ -33,20 +33,24 @@
    ```sh
    git clone https://github.com/username/calculator-app.git
 Masuk ke direktori project:
-cd calculator-app
+-cd calculator-app
 Jalankan perintah berikut untuk menginstal dependency:
-flutter pub get
+-flutter pub get
 
 ▶️ Cara Menjalankan Aplikasi
 Sambungkan perangkat Android/iOS atau gunakan emulator.
+
 Jalankan perintah berikut:
-flutter run
+-flutter run
 
 🎥 Demo Aplikasi
 (Sertakan tautan atau video demo di sini)
 
 👤 Identitas Pembuat
 Nama: John Doe
+
 Email: johndoe@example.com
+
 GitHub: github.com/johndoe
+
 LinkedIn: linkedin.com/in/johndoe
