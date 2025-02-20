@@ -10,9 +10,6 @@
 - **Tampilan Responsif** 📱💻  
   Dapat digunakan pada berbagai ukuran layar, baik di smartphone maupun desktop.
 
-- **Tema Gelap & Terang** 🌙☀️  
-  Mendukung mode gelap dan terang untuk pengalaman yang lebih nyaman.
-
 - **Riwayat Perhitungan** 📝  
   Menampilkan riwayat perhitungan yang dapat dihapus oleh pengguna.
 
