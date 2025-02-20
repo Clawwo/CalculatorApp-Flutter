@@ -14,18 +14,21 @@ class HomePage extends StatelessWidget {
     CalculatorController calculatorController = Get.put(CalculatorController());
 
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       body: SafeArea(
         child: Center(
-          // Tambahkan Center di sini
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: 500, // Lebar maksimum agar tampilan tetap seperti HP
+              maxWidth: 500,
             ),
             child: Column(
               children: [
                 Expanded(
                   flex: 5,
                   child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
                     padding: EdgeInsets.all(20),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,

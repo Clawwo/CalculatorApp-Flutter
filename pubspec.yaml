@@ -92,10 +92,10 @@ flutter:
 
 flutter_native_splash:
   color: "#ffffff" # Warna latar belakang
-  image: images/icons.jpg # Path gambar logo aplikasi (letakkan di folder assets)
+  image: images/logo.png
 
   android_12:
-    image: images/icons.jpg
+    image: images/logo.png
     icon_background_color: "#ffffff"
 
   fullscreen: true

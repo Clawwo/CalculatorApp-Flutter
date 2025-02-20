@@ -17,7 +17,7 @@ class CalculatorController extends GetxController {
       outputValue.value = 0.0;
     } else {
       if (_isDuplicateDot(btnName)) {
-        print("Invalid input: Duplicate dot.");
+        return;
       } else {
         inputValue.value += btnName;
       }
@@ -35,7 +35,6 @@ class CalculatorController extends GetxController {
       String historyEntry = "${inputValue.value} = ${outputValue.value}";
       historyList.add(historyEntry);
     } catch (e) {
-      print("Error parsing expression: $e");
       outputValue.value = 0.0;
     }
   }
