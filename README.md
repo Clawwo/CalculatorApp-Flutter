@@ -44,13 +44,11 @@ Jalankan perintah berikut:
 -flutter run
 
 🎥 Demo Aplikasi
-(Sertakan tautan atau video demo di sini)
+[(Tautan Vidio Demo CalcullatorApp)](https://github.com/Clawwo/CalculatorApp/blob/main/images/Demo%20CalculatorApp.mp4)
 
 👤 Identitas Pembuat
-Nama: John Doe
+Nama: Farel Haryanto
 
-Email: johndoe@example.com
+Email: farelharynto@gmial.com
 
-GitHub: github.com/johndoe
-
-LinkedIn: linkedin.com/in/johndoe
+LinkedIn: [linkedin.com/in/Farel Haryanto](https://www.linkedin.com/in/farel-haryanto-790553343/)
